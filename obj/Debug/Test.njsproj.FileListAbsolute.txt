@@ -1,0 +1,3 @@
+C:\Users\moozh\source\repos\Test\Test\obj\Debug\Test.njsproj.CoreCompileInputs.cache
+C:\Users\moozh\source\repos\Test\Test\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Users\moozh\source\repos\Test\Test\obj\Debug\Test.njsprojAssemblyReference.cache

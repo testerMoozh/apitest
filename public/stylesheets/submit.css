@@ -1,0 +1,453 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+body {
+    background-color: white;
+    height: 100%;
+}
+.sidenav {
+    height: 100%;
+    width: 100px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+    .sidenav a {
+        padding: 6px 6px 6px 32px;
+        text-decoration: none;
+        font-size: 12px;
+        color: #818181;
+        display: block;
+    }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+}
+
+<style >
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    /*Image only BG fallback*/
+    /*background = gradient + image pattern combo*/
+    background: white;
+}
+
+body {
+    font-family: arial;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+/*form styles*/
+#msform {
+    width: 80vh;
+    margin: 50px auto;
+    text-align: center;
+    position: relative;
+}
+
+    #msform fieldset {
+        background: white;
+        border: 0 none;
+        border-radius: 3px;
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+        padding: 20px 30px;
+        box-sizing: border-box;
+        width: 90%;
+        height: 70vh;
+        margin: 0 10%;
+        /*stacking fieldsets above each other*/
+        position: relative;
+    }
+        /*Hide all except first fieldset*/
+        #msform fieldset:not(:first-of-type) {
+            display: none;
+        }
+    /*inputs*/
+    #msform input, #msform textarea {
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-bottom: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        font-family: arial;
+        color: #2C3E50;
+        font-size: 13px;
+    }
+    /*buttons*/
+    #msform .action-button {
+        width: 100px;
+        background: #27AE60;
+        font-weight: bold;
+        color: white;
+        border: 0 none;
+        border-radius: 1px;
+        cursor: pointer;
+        padding: 10px 5px;
+        margin: 10px 5px;
+    }
+
+        #msform .action-button:hover, #msform .action-button:focus {
+            box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+        }
+/*headings*/
+.fs-title {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #2C3E50;
+    margin-bottom: 10px;
+}
+
+.fs-subtitle {
+    font-weight: normal;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.rowone {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.columnone {
+    flex: 50%;
+    padding: 10px;
+    height: 100%;
+}
+
+.container {
+    max-width: 80%;
+    height: 100%;
+    margin-left: 15%;
+    margin-top: 5%;
+    padding: 3em 3em 2em 3em;
+    background-color: #fff;
+    align-content: center;
+    position: relative;
+    border-radius: 4.2px;
+    box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.2);
+}
+
+.row {
+    zoom: 1;
+}
+
+    .row:before,
+    .row:after {
+        content: "";
+        display: table;
+    }
+
+    .row:after {
+        clear: both;
+    }
+
+.col-half {
+    padding-right: 10px;
+    float: left;
+    width: 50%;
+}
+
+    .col-half:last-of-type {
+        padding-right: 0;
+    }
+
+.col-third {
+    padding-right: 10px;
+    float: left;
+    width: 33.33333333%;
+}
+
+    .col-third:last-of-type {
+        padding-right: 0;
+    }
+
+@media only screen and (max-width: 540px) {
+    .col-half {
+        width: 100%;
+        padding-right: 0;
+    }
+}
+
+.text-area {
+    height: 100%;
+}
+
+:root {
+    --color-lightest: #f9fdfe;
+    --color-gray-light: #cdcfcf;
+    --color-gray-medium: #686a69;
+    --color-gray-dark: #414643;
+    --color-darkest: #2a2f2c;
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Headings use a different font because they’re hipsters. */
+h1,
+h2 {
+    color: var(--color-darkest);
+    font-size: 110%;
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: 125%;
+}
+
+/* Set up general layout rules for outer containers. */
+.contact-form,
+.results {
+    width: 90vw;
+    max-width: 550px;
+    margin: auto;
+}
+
+p {
+    margin-top: 0.5rem;
+    font-size: 87.5%;
+}
+
+.results pre {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: $color-lightest;
+    border: 1px solid var(--color-gray-light);
+    overflow-x: scroll;
+}
+
+.contact-form form {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 1rem 0 2rem;
+    border-top: 1px solid var(--color-gray-light);
+    border-bottom: 1px solid var(--color-gray-light);
+    overflow: hidden;
+}
+
+.input-group {
+    margin-top: 0.25rem;
+    padding: 0.5rem 1rem;
+}
+
+.contact-form label {
+    display: block;
+    color: $color-gray-dark;
+    font-family: Lato, sans-serif;
+    font-size: 90%;
+    line-height: 1.125;
+}
+
+.group-label {
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: 90%;
+}
+
+.contact-form label.inline {
+    display: inline-block;
+    margin-left: 0.25rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    display: block;
+    margin-top: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid $color-gray-light;
+    width: 100%;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    transition: 150ms border-color linear;
+}
+
+    .contact-form input[type=checkbox],
+    .contact-form input[type=radio] {
+        display: inline-block;
+        width: auto;
+    }
+
+        .contact-form input[type=checkbox]:not(:first-of-type),
+        .contact-form input[type=radio]:not(:first-of-type) {
+            margin-left: 1rem;
+        }
+
+    .contact-form input:focus,
+    .contact-form input:active {
+        border-color: var(--color-gray-medium);
+    }
+
+.contact-form button {
+    display: block;
+    margin: 0.5rem 1rem 0;
+    padding: 0 1rem 0.125rem;
+    background-color: var(--color-gray-medium);
+    border: 0;
+    color: var(--color-lightest);
+    font-family: lato, sans-serif;
+    font-size: 100%;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    text-transform: uppercase;
+    transition: 150ms all linear;
+}
+
+    .contact-form button:hover,
+    .contact-form button:active,
+    .contact-form button:focus {
+        background: var(--color-darkest);
+        cursor: pointer;
+    }
+
+.worko-tabs {
+    margin: 20px;
+    width: 30%;
+    margin-top: 15%;
+    margin-left: 35%;
+    box-shadow: 5px 5px 5px 5px #888888;
+}
+
+    .worko-tabs .state {
+        position: absolute;
+        left: -10000px;
+    }
+
+    .worko-tabs .flex-tabs {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+        .worko-tabs .flex-tabs .tab {
+            flex-grow: 1;
+            max-height: 80px;
+        }
+
+        .worko-tabs .flex-tabs .panel {
+            background-color: #fff;
+            padding: 20px;
+            min-height: 300px;
+            display: none;
+            width: 100%;
+            flex-basis: auto;
+        }
+
+    .worko-tabs .tab {
+        display: inline-block;
+        padding: 10px;
+        vertical-align: top;
+        background-color: #eee;
+        cursor: hand;
+        cursor: pointer;
+        border-left: 10px solid #ccc;
+    }
+
+        .worko-tabs .tab:hover {
+            background-color: #fff;
+        }
+
+#tab-one:checked ~ .tabs #tab-one-label,
+#tab-two:checked ~ .tabs #tab-two-label {
+    background-color: #fff;
+    cursor: default;
+    border-left-color: #69be28;
+}
+
+#tab-one:checked ~ .tabs #tab-one-panel,
+#tab-two:checked ~ .tabs #tab-two-panel {
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .flex-tabs {
+        flex-direction: column;
+    }
+
+        .flex-tabs .tab {
+            background: #fff;
+            border-bottom: 1px solid #ccc;
+        }
+
+            .flex-tabs .tab:last-of-type {
+                border-bottom: none;
+            }
+
+        .flex-tabs #tab-one-label {
+            order: 1;
+        }
+
+        .flex-tabs #tab-two-label {
+            order: 3;
+        }
+
+        .flex-tabs #tab-one-panel {
+            order: 2;
+        }
+
+        .flex-tabs #tab-two-panel {
+            order: 4;
+        }
+
+
+    #tab-one:checked ~ .tabs #tab-one-label,
+    #tab-two:checked ~ .tabs #tab-two-label {
+        border-bottom: none;
+    }
+
+    #tab-one:checked ~ .tabs #tab-one-panel,
+    #tab-two:checked ~ .tabs #tab-two-panel {
+        border-bottom: 1px solid #ccc;
+    }
+}
+
+.plus {
+    display: inline-block;
+    padding-top: 20px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(#fff,#fff), linear-gradient(#fff,#fff), #000;
+    background-position: center;
+    background-size: 50% 4px,4px 50%; /*thickness = 2px, length = 50% (25px)*/
+    background-repeat: no-repeat;
+}
+
+.alt {
+    background: linear-gradient(#000,#000), linear-gradient(#000,#000);
+    background-position: center;
+    background-size: 50% 4px,4px 50%; /*thickness = 2px, length = 50% (25px)*/
+    background-repeat: no-repeat;
+    margin-left: 92%;
+}

@@ -1,0 +1,34 @@
+
+body {
+    font-family: sans-serif;
+}
+
+textarea {
+    width: 100%;
+}
+
+h5 {
+    margin: 0
+}
+
+.CodeMirror {
+    height: 500px;
+    border: 1px solid #ddd;
+}
+
+.CodeMirror-scroll {
+    max-height: 500px;
+}
+
+.CodeMirror pre {
+    padding-left: 7px;
+    line-height: 1.25;
+}
+
+.rowone {
+    display: flex;
+}
+
+.columnone {
+    flex: 33.3%;
+}

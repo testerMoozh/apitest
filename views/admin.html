@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Responsive horizontal page</title>
+    <link rel="stylesheet" href="stylesheets/new.css" />
+</head>
+<body>
+
+    <div class="sidenav">
+    </div>
+
+    <div class="container" data-0="transform:translateX(0%); " data-1000="transform:translateX(-400%);">
+        <section>
+            <div class="content">
+                <h2>What questions can I ask about my city?</h2>
+                <p id="questionsintro">Start With A Question and See Where It Takes You! </p>
+                <p id="questions">Scroll ---> </p>
+
+            </div>
+        </section>
+        <section>
+        </section>
+
+    </div>
+    <script type="text/javascript" src="/javascripts/skrollr.min.js"></script>
+    <script type="text/javascript">
+        var s = skrollr.init();
+    </script>
+</body>
+</html>

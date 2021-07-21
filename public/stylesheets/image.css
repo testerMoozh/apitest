@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+li{
+    list-style: none;
+    transition: all 0.4s;
+}
+
+li:hover{
+    transform: scale(1.1);
+}
+
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+}
+
+h1{
+    font-size: 70px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+h3{
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+
+p{
+    margin-top: 30px;
+    font-size: 14px;
+    font-family: 'Lucida Sans Unicode';
+}
+
+img{
+    width: 100;
+}
+
+.btn{
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: antiquewhite;
+    letter-spacing: 5px;
+}
+
+.btn:hover{
+    transform: scale(0.97);
+    background-color: mintcream;
+}
+
+
+.main-container{
+    width: 100vw;
+    height: 100vh;
+}
+
+#logo{
+    border:1px solid black;
+    padding: 0 15px;
+}
+.main-nav{
+    position: fixed;
+    display: flex;
+    padding: 2em 4em;
+}
+
+.main-nav .ul_second{
+    position: fixed;
+    display: flex;
+    right: 4em;
+}
+
+.main-nav .ul_second li{
+    margin-left: 1.5em;
+}
+
+.main-nav .ul_second #border{
+    border: 1px solid black;
+    padding: 0 15px;
+    align-items: center;
+}
+
+.container{
+
+}
+
+.container .summer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8em;
+}
+
+.container .summer .image{
+     width: 400px;
+     height: 600px;
+}
+
+.content{
+    margin-top: 50px;
+    margin-right: 100px;
+    text-align: center;
+    z-index: 10;
+}

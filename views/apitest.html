@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Add live realtime data</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoibW9vemhhbnNoIiwiYSI6ImNrcmRhOGlycTBzeXQycXBlZGJtZWw4ajYifQ.gZF2IkCaamcVDKCGwIWeOw';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        zoom: 0
+    });
+
+        var url = 'http://uoweb3.ncl.ac.uk/api/v1.1/sensors/types/json/?theme=Weather';
+    map.on('load', function () {
+        var request = new XMLHttpRequest();
+        window.setInterval(function () {
+            // make a GET request to parse the GeoJSON at the url
+            request.open('GET', url, true);
+            request.onload = function () {
+                if (this.status >= 200 && this.status < 400) {
+                    // retrieve the JSON from the response
+                    var json = JSON.parse(this.response);
+
+                    // update the drone symbol's location on the map
+                    map.getSource('drone').setData(json);
+
+                    // fly the map to the drone's current location
+                    //map.flyTo({
+                    //    center: json.geometry.coordinates,
+                    //    speed: 0.5
+                    //});
+                }
+            };
+            request.send();
+        }, 2000);
+
+        map.addSource('drone', { type: 'geojson', data: url });
+        map.addLayer({
+            'id': 'drone',
+            'type': 'symbol',
+            'source': 'drone',
+            'layout': {
+                // This icon is a part of the Mapbox Streets style.
+                // To view all images available in a Mapbox style, open
+                // the style in Mapbox Studio and click the "Images" tab.
+                // To add a new image to the style at runtime see
+                // https://docs.mapbox.com/mapbox-gl-js/example/add-image/
+                'icon-image': 'rocket-15'
+            }
+        });
+    });
+    </script>
+
+</body>
+</html>

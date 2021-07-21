@@ -1,0 +1,143 @@
+/* Android 2.3 :checked fix */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+@-webkit-keyframes fake {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fake {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.worko-tabs {
+    margin: 20px;
+    width: 30%;
+    margin-top: 15%;
+    margin-left: 35%;
+    box-shadow: 5px 5px 5px 5px #888888;
+}
+
+    .worko-tabs .state {
+        position: absolute;
+        left: -10000px;
+    }
+
+    .worko-tabs .flex-tabs {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+        .worko-tabs .flex-tabs .tab {
+            flex-grow: 1;
+            max-height: 80px;
+        }
+
+        .worko-tabs .flex-tabs .panel {
+            background-color: #fff;
+            padding: 20px;
+            min-height: 300px;
+            display: none;
+            width: 100%;
+            flex-basis: auto;
+        }
+
+    .worko-tabs .tab {
+        display: inline-block;
+        padding: 10px;
+        vertical-align: top;
+        background-color: #eee;
+        cursor: hand;
+        cursor: pointer;
+        border-left: 10px solid #ccc;
+    }
+
+        .worko-tabs .tab:hover {
+            background-color: #fff;
+        }
+
+#tab-one:checked ~ .tabs #tab-one-label,
+#tab-two:checked ~ .tabs #tab-two-label {
+    background-color: #fff;
+    cursor: default;
+    border-left-color: #69be28;
+}
+
+#tab-one:checked ~ .tabs #tab-one-panel,
+#tab-two:checked ~ .tabs #tab-two-panel {
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .flex-tabs {
+        flex-direction: column;
+    }
+
+        .flex-tabs .tab {
+            background: #fff;
+            border-bottom: 1px solid #ccc;
+        }
+
+            .flex-tabs .tab:last-of-type {
+                border-bottom: none;
+            }
+
+        .flex-tabs #tab-one-label {
+            order: 1;
+        }
+
+        .flex-tabs #tab-two-label {
+            order: 3;
+        }
+
+        .flex-tabs #tab-one-panel {
+            order: 2;
+        }
+
+        .flex-tabs #tab-two-panel {
+            order: 4;
+        }
+
+
+    #tab-one:checked ~ .tabs #tab-one-label,
+    #tab-two:checked ~ .tabs #tab-two-label {
+        border-bottom: none;
+    }
+
+    #tab-one:checked ~ .tabs #tab-one-panel,
+    #tab-two:checked ~ .tabs #tab-two-panel {
+        border-bottom: 1px solid #ccc;
+    }
+}
+
+.plus {
+    display: inline-block;
+    padding-top: 20px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(#fff,#fff), linear-gradient(#fff,#fff), #000;
+    background-position: center;
+    background-size: 50% 4px,4px 50%; /*thickness = 2px, length = 50% (25px)*/
+    background-repeat: no-repeat;
+}
+
+.alt {
+    background: linear-gradient(#000,#000), linear-gradient(#000,#000);
+    background-position: center;
+    background-size: 50% 4px,4px 50%; /*thickness = 2px, length = 50% (25px)*/
+    background-repeat: no-repeat;
+    margin-left: 92%;
+}
